@@ -255,3 +255,49 @@ tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
   }
 }
+.board-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+.sort-controls, .filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.filter-controls input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.board-controls select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.board-controls label {
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .board-controls {
+    flex-direction: column;
+  }
+  
+  .sort-controls, .filter-controls {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
