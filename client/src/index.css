@@ -14,12 +14,12 @@
 
 /* webkit solution */
 ::-webkit-input-placeholder { 
-  text-align:right; 
+  text-align: right; 
 }
 
 /* mozilla solution */
 input:-moz-placeholder { 
-  text-align:right; 
+  text-align: right; 
 }
 
 a {
@@ -27,6 +27,7 @@ a {
   color: #000000;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -58,9 +59,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -128,6 +131,7 @@ tbody tr:nth-child(odd) {
   table-layout: fixed;
 }
 
+/* Board Styles */
 .board {
   width: 100%;
 }
@@ -136,125 +140,11 @@ tbody tr:nth-child(odd) {
   display: flex;
 }
 
-.swim-lane {
-  text-align: center;
-  font-weight: 500;
-  width: 33%;
-  height: 90vh; 
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 5px;
-  padding: 5px;
-}
-
-.todo {
-  background-color: #e9cbec;
-}
-
-.inprogress {
-  background-color: #b864c4;
-}
-
-.done {
-  background-color: #732381;
-}
-
-.ticket-card {
-  text-align: left;
-  background-color: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 0.1em solid black;
-}
-
-.container {
-  /* margin: auto; */
-  width: 100%;
-  /* height: 90%; */
-}
-
 #create-ticket-link {
   display: block;
   margin-left: auto;
 }
 
-
-.form {
-  width: 60%;
-  height: 80%;
-  background-color: #b864c4;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form > h1, .form > label {
-  color: yellow;
-}
-
-.form > input {
-  width: 200px;
-  
-}
-
-.form > label {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-}
-
-.form button {
-  margin-top: 2.5%;
-}
-
-.form textarea {
-  resize: both;
-  min-height: 30px;
-  min-width: 30px;
-}
-
-.editBtn {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-.deleteBtn {
-  background-color: #f9f9f9;
-  font-weight: 500;
-  color: black;
-  text-decoration: inherit;
-}
-
-.deleteBtn:hover {
-  color: #535bf2;
-}
-
-.login-notice {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
 .board-controls {
   display: flex;
   justify-content: space-between;
@@ -291,6 +181,131 @@ tbody tr:nth-child(odd) {
   color: #333;
 }
 
+.swim-lane {
+  text-align: center;
+  font-weight: 500;
+  width: 33%;
+  height: 90vh; 
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  padding: 5px;
+  overflow-y: auto; 
+}
+
+.todo {
+  background-color: #e9cbec;
+}
+
+.inprogress {
+  background-color: #b864c4;
+}
+
+.done {
+  background-color: #732381;
+}
+
+/* Ticket Styles */
+.ticket-card {
+  text-align: left;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 0.1em solid black;
+}
+
+.editBtn {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.deleteBtn {
+  background-color: #f9f9f9;
+  font-weight: 500;
+  color: black;
+  text-decoration: inherit;
+}
+
+.deleteBtn:hover {
+  color: #535bf2;
+}
+
+
+.container {
+  width: 100%;
+}
+
+.form {
+  width: 80%;
+  max-width: 600px;
+  min-width: 320px;
+  height: auto;
+  min-height: 80%;
+  background-color: #b864c4;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form > h1, .form > label {
+  color: yellow;
+}
+
+.form > input {
+  width: 80%;
+  min-width: 250px;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form > label {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.form button {
+  margin-top: 2.5%;
+}
+
+.form textarea {
+  resize: both;
+  min-height: 60px;
+  min-width: 250px;
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-notice {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.login-notice h1 {
+  font-size: 2.4em;
+  color: #732381;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
 @media (max-width: 768px) {
   .board-controls {
     flex-direction: column;
@@ -299,5 +314,18 @@ tbody tr:nth-child(odd) {
   .sort-controls, .filter-controls {
     width: 100%;
     flex-wrap: wrap;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
   }
 }
