@@ -44,13 +44,26 @@ export const getTicketById = async (req: Request, res: Response) => {
 };
 
 // POST /tickets
-export const createTicket = async (req: Request, res: Response) => {
+export const createTicket = async (req: Request, res: Response): Promise<Response | void> => {
   const { name, status, description, assignedUserId } = req.body;
+  console.log('Creating ticket with data:', req.body);
+  
   try {
+    // Validate the assignedUserId exists
+    if (assignedUserId) {
+      const user = await User.findByPk(assignedUserId);
+      if (!user) {
+        console.log(`User ID ${assignedUserId} not found`);
+        return res.status(400).json({ message: 'Assigned user not found' });
+      }
+    }
+    
     const newTicket = await Ticket.create({ name, status, description, assignedUserId });
-    res.status(201).json(newTicket);
+    console.log('Ticket created successfully:', newTicket.id);
+    return res.status(201).json(newTicket);
   } catch (error: any) {
-    res.status(400).json({ message: error.message });
+    console.error('Error creating ticket:', error);
+    return res.status(400).json({ message: error.message });
   }
 };
 

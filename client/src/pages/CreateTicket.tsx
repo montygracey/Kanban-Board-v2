@@ -34,14 +34,27 @@ const CreateTicket = () => {
     getAllUsers();
   }, []);
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (newTicket){
-      const data = await createTicket(newTicket);
-      console.log(data);
+  // Inside your handleSubmit function in CreateTicket.tsx
+const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  if (newTicket) {
+    console.log('Submitting ticket data:', newTicket);
+    
+    // Make sure assignedUserId is a number
+    const ticketData = {
+      ...newTicket,
+      assignedUserId: Number(newTicket.assignedUserId)
+    };
+    
+    try {
+      const data = await createTicket(ticketData);
+      console.log('Ticket created:', data);
       navigate('/');
+    } catch (err) {
+      console.error('Failed to create ticket:', err);
     }
   }
+}
 
   const handleTextAreaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
