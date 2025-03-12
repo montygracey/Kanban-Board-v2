@@ -14,7 +14,7 @@
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
     "seed": "cd server && npm run seed",
-"render-build": "npm install && cd server && npm install && NODE_ENV=production npm install --no-dev && npm install typescript @types/express @types/jsonwebtoken @types/bcrypt && ./node_modules/.bin/tsc || ../node_modules/.bin/tsc || npx tsc && cd ../client && npm install && npm run build"
+"render-build": "chmod +x render-build.sh && ./render-build.sh"
   },
   "keywords": [],
   "author": "",
