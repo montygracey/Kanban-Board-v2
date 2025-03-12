@@ -14,7 +14,7 @@
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
     "seed": "cd server && npm run seed",
-"render-build": "chmod +x render-build.sh && ./render-build.sh"
+"render-build": "npm install && cd server && npm install && npm run build && cd ../client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
