@@ -14,7 +14,7 @@
     "client:dev": "cd client && npm run dev",
     "build": "cd client && npm run build",
     "seed": "cd server && npm run seed",
-   "render-build": "npm install && cd server && npm install && npx tsc && cd ../client && npm install && npm run build"
+  "render-build": "npm install && npm install typescript && cd server && npm install && ../node_modules/.bin/tsc && cd ../client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
